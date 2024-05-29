@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;800&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        header {
+            background-color: white;
+            color: #06C167;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 35px;
+            color: black;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+        
+        .nav-bar {
+            display: flex;
+        }
+
+        .main-image-section {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .main-image-section img {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+        }
+
+        .main-image-section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-image-section .text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .content-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            color: #06C167;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .vision, .approach {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .vision > div, .approach > div {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .vision h2, .approach h2 {
+            color: #06C167;
+            margin-bottom: 20px;
+        }
+
+        .vision p, .approach p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .vision img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .approach img {
+            width: 40%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+        }
+
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #CCFFCC;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-bar.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .content-section, .vision, .approach {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .vision img, .approach img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login or Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-image-section">
+        <img src="https://stg-uploads.slidenest.com/template_2121/templateColor_2076/previewImages/zero-waste-lifestyle-powerpoint-google-slides-keynote-presentation-template-2.jpeg" alt="About Us Background">
+        
+    </section>
+
+    <section class="content-section">
+        <h1>About FoodShare</h1>
+        <p>We at FoodShare aim to combat food waste and hunger by redistributing excess food to those in need.</p>
+    </section>
+
+    <section class="vision">
+        <div>
+            <h2>Our Vision</h2>
+            <p>FoodShare aims to reduce food waste and address food insecurity through technology and community collaboration. It connects surplus food providers with nearby recipients in need, diverting excess food from landfills. By fostering <b>community sharing</b>, FoodShare promotes the redistribution of surplus food resources among neighbors.</p>
+            <p>Features like donation tracking ensure transparency and accountability in the redistribution process. The website encourages users to take collective responsibility for reducing food waste and supporting those in need. Through its platform, FoodShare promotes a more sustainable and equitable food system. Its objective is to leverage technology to create a positive impact on food sustainability and accessibility.</p>
+        </div>
+        <img src="https://t4.ftcdn.net/jpg/04/98/47/53/240_F_498475327_1fHyorA3Pf0PVeOaIBc5XcjKvliiZCrs.jpg" alt="Our Vision">
+    </section>
+
+    <section class="approach">
+        <img src="https://media.assettype.com/TNIE%2Fimport%2Fuploads%2Fuser%2Fimagelibrary%2F2016%2F6%2F15%2F0%2Foriginal%2FLog%20in.jpg?w=640&auto=format%2Ccompress" alt="Our Approach">
+        <div>
+            <h2>Our Approach</h2>
+            <p>Transparency and Accountability: Central to FoodShare's approach is ensuring transparency and accountability in the redistribution process. It incorporates features like donation tracking to provide users with visibility into how surplus food resources are allocated. This emphasis on transparency encourages collective responsibility among users for reducing food waste and supporting those in need.</p>
+            <p>Leveraging Technology for Redistribution: FoodShare's mobile app connects surplus food providers with nearby recipients, efficiently redistributing resources
+            </div>
+        </section>
+    
+        <footer style="background-color: rgb(65, 57, 57);">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>The basic concept of this project Food Waste Management is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:Foodshare99@gmail.com">Foodshare99@gmail.com</a></p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/food.share99" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/food.share.2024?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/@foodshare-eg8se?si=jZKg1yjiy3_JmNo3" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://chat.whatsapp.com/E2XfwaQxFQeFlL84SuwdcQ" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <p class="logo" style="color: white;">Food <b style="color: #06C167;">Share</b></p>
+                    <a href="home.html">Home</a> | 
+                    <a href="about.html">About</a> | 
+                    <a href="help.html">Help</a> | 
+                    <a href="contact.html">Contact</a>
+                    <p style="color: #06C167;">FoodShare © 2024</p>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.querySelector('.hamburger').addEventListener('click', () => {
+                document.querySelector('.nav-bar').classList.toggle('active');
+            });
+        </script>
+    </body>
+</html>
+    

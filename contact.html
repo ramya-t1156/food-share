@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            /* Replace 'background.jpg' with the path to your image */
+            background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiatoday.in%2Findia-today-insight%2Fstory%2Fnine-easy-ways-to-stick-to-organic-food-2319298-2023-01-09&psig=AOvVaw2l2lfMM5H9Hf4o2L40NqVd&ust=1716209983235000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPDIzJHjmYYDFQAAAAAdAAAAABAq');
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+        }
+
+        header {
+            background-color: white;
+            color: #06C167;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 35px;
+            color: black;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+
+        .nav-bar {
+            display: flex;
+        }
+
+        .heading {
+            font-size: 23px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #06C167;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+        }
+
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #CCFFCC;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            text-align: right;
+            flex: 1;
+            color: white;
+        }
+
+        .footer-links a {
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #06C167;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-bar.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .content, .photo, .deli, .ser {
+                padding: 10px;
+            }
+
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .image-section img {
+                height: 70vh;
+            }
+
+            .footer-links {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #06C167;">
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html">Login or Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+    <section class="cover"></section>
+    <p class="heading">Contact Us</p>
+    <div class="contact-form">
+        <form action="feedback.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="Send" name="send">
+        </form>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>The basic concept of this project Food Waste Management is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone"></i> +123-456-7890</p>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:Foodshare99@gmail.com">Foodshare99@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/food.share99" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/food.share.2024?mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://youtube.com/@foodshare-eg8se?si=jZKg1yjiy3_JmNo3" target="_blank"><i class="fa fa-youtube"></i></a>
+                    <a href="https://chat.whatsapp.com/E2XfwaQxFQeFlL84SuwdcQ" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="logo" style="color: white;">Food <b style="color: #06C167;">Share</b></p>
+                <a href="home.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="help.html">Help</a> | 
+                <a href="contact.html">Contact</a>
+                <p style="color: #06C167;">FoodShare © 2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

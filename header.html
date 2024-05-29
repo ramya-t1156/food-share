@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        
+        header {
+            background-color: black;
+            color: #06C167;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 35px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: #06C167;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #CCFFCC;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+        
+        .nav-bar {
+            display: flex;
+        }
+        
+        .banner a {
+            display: inline-block;
+            font-size: 20px;
+            background: #06C167;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 2px;
+            transition: 0.2s;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .banner a:hover {
+            letter-spacing: 6px;
+        }
+        
+        .content, .photo, .deli, .ser {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .content p, .photo p, .deli p {
+            font-size: 23px;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .box img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        footer h3 {
+            color: #06C167;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #CCFFCC;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-bar.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .content, .photo, .deli, .ser {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.php">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+    <section class="banner">
+        <a href="fooddonateform.php">Donate Food</a>
+    </section>
+    <div class="content">
+        <p style="font-size: 23px;">“Cutting food waste is a delicious way of saving money, helping to feed the world and protect the planet.”</p>
+    </div>
+    <div class="photo">
+        <br>
+        <p class="heading">Our Works</p>
+        <br>
+        <p style="font-size: 28px;">"Look what we can do together."</p>
+        <br>
+        <div class="wrapper">
+            <div class="box"><img src="img/p1.jpeg" alt="Work 1"></div>
+            <div class="box"><img src="img/p4.jpeg" alt="Work 2"></div>
+            <div class="box"><img src="img/p3.jpeg" alt="Work 3"></div>
+        </div>
+    </div>
+    <div class="deli">
+        <p class="heading">DOOR PICKUP</p>
+        <br>
+        <p class="para">"Your donate will be immediately collected and sent to needy people"</p>
+        <img src="img/delivery.gif" alt="Delivery" style="margin-left:auto; margin-right:auto;">
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div>
+                <p class="about"><span>About us:</span> The basic concept of this project Food Waste Management is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc., and distribute it to needy people.</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Phone: (+00) 0000 000 000</p>
+                <p>Email: <a href="mailto:Fooddonate@gmail.com">Fooddonate@gmail.com</a></p>
+                <ul class="social">
+                    <li><a href="https://www.facebook.com/TheAkshayaPatraFoundation/"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+                    <li><a href="https://twitter.com/globalgiving"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+                    <li><a href="https://www.instagram.com/charitism/"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+                    <li><a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp" style="font-size:50px;color: white;"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Food<span style="color: #06C167;">Share</span></h2>
+                <p class="menu">
+                    <a href="#">Home</a> |
+                    <a href="about.html">About</a> |
+                    <a href="profile.php">Profile</a> |
+                    <a href="contact.html">Contact</a>
+                </p>
+                <p class="name">Food Share &copy; 2023</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

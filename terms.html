@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare Terms and Conditions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #06C167;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        header a:hover {
+            border-color: #333;
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #2d2d2d;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1;
+            color: #2d2d2d;
+            margin-top: 10px;
+
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #06C167;
+            text-decoration: none;
+            border-bottom: 1px solid #06C167;
+            padding-bottom: 2px;
+            transition: border-color 0.3s;
+        }
+
+        footer a:hover {
+            border-color: #fff;
+        }
+        
+        /* Styles from the Home page */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
+
+        header {
+            background-color: white;
+            color: #06C167;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 35px;
+            color: black;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+
+        .nav-bar {
+            display: flex;
+        }
+
+        .image-section {
+            position: relative;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+        }
+
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner a {
+            display: inline-block;
+            font-size: 20px;
+            background: #06C167;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+
+        .banner a:hover {
+            letter-spacing: 6px;
+        }
+
+        .content, .photo, .deli, .ser {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content p, .photo p, .deli p {
+            font-size: 23px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo .heading {
+            color: black;
+            font-size: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .green-line {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #06C167;
+        }
+
+        .photo .door-pickup {
+            color: #06C167;
+            font-size: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .photo .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .photo .box {
+            width: 30%; /* Adjust as needed */
+            position: relative;
+        }
+
+        .photo .box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo .box:hover img {
+            transform: scale(0.9);
+        }
+
+        .box img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+        }
+
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #CCFFCC;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-bar.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .content, .photo, .deli, .ser {
+                padding: 10px;
+            }
+
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .image-section img {
+                height: 70vh;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Back </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content" style="text-align: left;">
+        <h1>Terms and Conditions</h1>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">Welcome to FoodShare! These Terms and Conditions govern your use of the FoodShare website and mobile application (collectively, the "Platform"). By accessing or using the Platform, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not access the Platform.</p>
+        
+        <!-- Include other terms and conditions from the provided content -->
+        
+        <!-- Example: -->
+        <h2>Acceptance of Terms</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">By accessing or using the Platform, you agree to be bound by these Terms and Conditions and all applicable laws and regulations.</p>
+        <h2>Description of Services</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">FoodShare aims to reduce food waste and address food insecurity by connecting surplus food providers with nearby recipients in need. Our Platform facilitates the redistribution of excess food resources among neighbors through technology and community collaboration.</p>
+        
+        <h2>User Conduct</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">Users must adhere to the rules and guidelines outlined in these Terms and Conditions. Any misuse of the Platform, including illegal activities, abusive behavior, or violation of community standards, may result in termination of access.</p>
+        
+        <h2>Intellectual Property Rights</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">All content, trademarks, logos, and intellectual property displayed on the Platform are the property of FoodShare or its licensors. Users may not reproduce, distribute, or modify any content without permission.</p>
+        
+        <h2>Privacy Policy</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your personal information when you use our Platform.</p>
+        
+        <h2>User Accounts</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">Users may be required to create an account to access certain features of the Platform. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. FoodShare provides the Platform on an "as is" and "as available" basis. We do not warrant the accuracy, completeness, or reliability of any content or information on the Platform.</p>
+        
+        <h2>Governing Law and Jurisdiction</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">These Terms and Conditions are governed by and construed in accordance with the laws of [Jurisdiction]. Any disputes arising out of or relating to these terms shall be resolved exclusively in the courts of [Jurisdiction].</p>
+        
+        <h2>Changes to Terms</h2>
+        <p style="font-size:larger; font-family: 'Times New Roman', Times, serif;">FoodShare reserves the right to modify or update these Terms and Conditions at any time without prior notice. It is your responsibility to review these terms periodically for changes.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 FoodShare. All rights reserved.</p>
+    </footer>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
+
+        

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,500;0,700;0,800;1,400;1,600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        header {
+            background-color: white;
+            color: #06C167;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 35px;
+            color: black;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+        
+        .nav-bar {
+            display: flex;
+        }
+
+        .image-section {
+            position: relative;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 90vh;
+            object-fit: cover;
+        }
+
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .banner a {
+            display: inline-block;
+            font-size: 20px;
+            background: #06C167;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+        
+        .banner a:hover {
+            letter-spacing: 6px;
+        }
+        
+        .content, .photo, .deli, .ser {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .content p, .photo p, .deli p {
+            font-size: 23px;
+        }
+        
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .photo .heading {
+            color: black;
+            font-size: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .green-line {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #06C167;
+        }
+
+        .photo .door-pickup {
+            color: #06C167;
+            font-size: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .photo .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .photo .box {
+            width: 30%; /* Adjust as needed */
+            position: relative;
+        }
+
+        .photo .box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo .box:hover img {
+            transform: scale(0.9);
+        }   
+
+        .box img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+        }
+
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: #CCFFCC;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-bar.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .content, .photo, .deli, .ser {
+                padding: 10px;
+            }
+            
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .image-section img {
+                height: 70vh;
+            }
+
+            .footer-links {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="login.html">Login or Signup</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <!-- Image section -->
+    <section class="image-section">
+        <img src="C:\Users\HP\Documents\FOOD LINKERS\bg.avif" alt="Description of the image">
+        <section class="banner">
+            <a href="fooddonateform.php">Share Food</a>
+        </section>
+    </section>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+    <div class="content" style="background-color: #06C167;">
+        <p style="font-size: 23px; color: white;">"If you can’t feed a hundred people, then feed just one." - Mother Teresa</p>
+    </div>
+    <div class="photo">
+        <br>
+        <p class="heading" style="font-size: 34px; margin-bottom: 20px;color: black;"><b>Our Works</b><span class="green-line"></span></p>
+        <p style="font-size: 28px; margin-bottom: 20px;">Look what we can do together.</p>
+        <br>
+        <div class="wrapper">
+            <div class="box">
+                <a href="#"><img src="C:\Users\HP\Documents\FOOD LINKERS\F4.jpeg" alt="Work 1"></a>
+            </div>
+            <div class="box">
+                <a href="#"><img src="C:\Users\HP\Documents\FOOD LINKERS\F2.png" alt="Work 2"></a>
+            </div>
+            <div class="box">
+                <a href="#"><img src="C:\Users\HP\Documents\FOOD LINKERS\F3.jpeg" alt="Work 3"></a>
+            </div>
+        </div>
+        <br>
+        <p class="door-pickup" style="font-size: 34px; margin-bottom: 20px;color: black;"><b>DOOR PICKUP</b><span class="green-line"></span></span></p>
+        <p style="font-size: 28px; margin-bottom: 20px;">Your donation will be immediately collected and sent to needy people.</p>
+        <img src="C:\Users\HP\Documents\FOOD LINKERS\del2.png" alt="Delivery" style="margin-left:auto; margin-right:auto;">
+        <img src="C:\Users\HP\Documents\FOOD LINKERS\del.png" alt="Delivery" style="margin-left:auto; margin-right:auto;">
+    </div>
+    
+    <footer style="background-color: rgb(65, 57, 57);">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>The basic concept of this project Food Waste Management is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:Foodshare99@gmail.com">Foodshare99@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/food.share99" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/food.share.2024?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/@foodshare-eg8se?si=jZKg1yjiy3_JmNo3" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://chat.whatsapp.com/E2XfwaQxFQeFlL84SuwdcQ" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="logo" style="color: white;">Food <b style="color: #06C167;">Share</b></p>
+                <a href="home.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="help.html">Help</a> | 
+                <a href="contact.html">Contact</a>
+                <p style="color: #06C167;">FoodShare © 2024</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

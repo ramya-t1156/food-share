@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;800&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 35px;
+            color: black;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: #06C167;
+            margin: 4px 0;
+        }
+        .nav-bar {
+            display: flex;
+        }
+        .heading {
+            font-size: 23px;
+            text-align: center;
+            margin: 20px;
+        }
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .contact-form {
+            flex: 1 1 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #06C167;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .social-login button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+        .google-login {
+            background-color: #db4437;
+        }
+        .facebook-login {
+            background-color: #3b5998;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .signup-link a {
+            color: #06C167;
+            text-decoration: none;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+        }
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #CCFFCC;
+        }
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+        .footer-links {
+            text-align: right;
+            flex: 1;
+            color: white;
+        }
+        .footer-links a {
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            color: #06C167;
+        }
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-bar.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .heading {
+                margin: 10px;
+            }
+            .contact-form {
+                padding: 10px;
+            }
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                text-align: center;
+                margin-top: 10px;
+            }
+            .contact-form-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .contact-form {
+                width: 100%; /* Full width on smaller screens */
+            }
+            .contact-form-container img {
+                width: 100%; /* Full width on smaller screens */
+                max-width: 400px; /* Limiting image size */
+                margin-bottom: 20px;
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active">Login or Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+    <div class="contact-form-container">
+        <img src="C:\Users\HP\Documents\FOOD LINKERS\c.webp" alt="Image" style="flex: 0 0 50%; max-width: 50%; border-radius: 20px; margin-bottom: 20px;">
+        
+        <div class="contact-form" style="padding-bottom: 30px; padding-left: 30px;padding-right: 30px;">
+            <h1>LOGIN TO FOODSHARE</h1>
+            <form action="login.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="submit" value="Login" name="login">
+            </form>
+            <div class="social-login">
+                <!-- Placeholder actions for Google and Facebook login -->
+                <button class="google-login" onclick="signInWithGoogle()"><i class="fa fa-google"></i> Continue with Google</button>
+                <button class="facebook-login" onclick="signInWithFacebook()"><i class="fa fa-facebook"></i> Continue with Facebook</button>
+            </div>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>The basic concept of this project Food Waste Management is to collect the excess/left over food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone"></i> +123-456-7890</p>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:Foodshare99@gmail.com">Foodshare99@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/food.share99" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/food.share.2024?mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://youtube.com/@foodshare-eg8se?si=jZKg1yjiy3_JmNo3" target="_blank"><i class="fa fa-youtube"></i></a>
+                    <a href="https://chat.whatsapp.com/E2XfwaQxFQeFlL84SuwdcQ" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="logo" style="color: white;">Food <b style="color: #06C167;">Share</b></p>
+                <a href="home.html">Home</a> | 
+                <a href="about.html">About</a> | 
+                <a href="help.html">Help</a> | 
+                <a href="contact.html">Contact</a>
+                <p style="color: #06C167;">FoodShare © 2024</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function signInWithGoogle() {
+            // Placeholder function for Google Sign-in
+            alert('Google Sign-in functionality will be implemented later.');
+        }
+        
+        function signInWithFacebook() {
+            // Placeholder function for Facebook Sign-in
+            alert('Facebook Sign-in functionality will be implemented later.');
+        }
+    </script>
+</body>
+</html>
+

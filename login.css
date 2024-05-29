@@ -1,0 +1,211 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input,
+.input-field select {
+    width: calc(100% - 40px); /* Adjust for icon width */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-color: #06C167;
+    box-shadow: 0 0 6px rgba(6, 193, 103, 0.5);
+}
+
+.input-field .icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 18px;
+}
+
+.input-field .showHidePw {
+    cursor: pointer;
+    right: 40px; /* Adjust for both icons */
+}
+
+.input-field .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.input-field .error-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: red;
+    font-size: 20px;
+}
+
+.input-field button {
+    width: 100%;
+    padding: 12px;
+    background-color: #06C167;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-field button:hover {
+    background-color: #069c54;
+}
+
+.input-field .terms {
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.input-field .terms label {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-field .terms input {
+    margin-right: 10px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.input-field .terms a {
+    color: #06C167;
+    text-decoration: none;
+}
+
+.input-field .terms a:hover {
+    color: #069c54;
+}
+
+.input-field .terms input:checked ~ a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.input-field .terms input:checked ~ a::after {
+    content: '\\2713';
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    font-size: 12px;
+    color: #06C167;
+    font-weight: bold;
+}
+
+.login-signup {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-signup .text a {
+    color: #06C167;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-signup .text a:hover {
+    color: #069c54;
+}
+
+.slideshow {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #06C167;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(100% 0, 100% 100%, 70% 100%, 50% 50%, 70% 0);
+}
+
+.slideshow img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .forms {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .slideshow {
+        display: none;
+    }
+}

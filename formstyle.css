@@ -1,0 +1,172 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form {
+    flex: 1;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input,
+.input-field select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-color: #06C167;
+    box-shadow: 0 0 6px rgba(6, 193, 103, 0.5);
+}
+
+.input-field .icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #ccc;
+    font-size: 18px;
+}
+
+.input-field .showHidePw {
+    cursor: pointer;
+}
+
+.input-field .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.input-field .error-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: red;
+    font-size: 20px;
+}
+
+.input-field button {
+    width: 100%;
+    padding: 12px;
+    background-color: #06C167;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-field button:hover {
+    background-color: #069c54;
+}
+
+.login-signup {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-signup .text a {
+    color: #06C167;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-signup .text a:hover {
+    color: #069c54;
+}
+
+.slideshow {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slideshow img:first-child {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        padding: 10px;
+    }
+
+    .forms {
+        flex-direction: column;
+    }
+
+    .slideshow {
+        display: none;
+    }
+}

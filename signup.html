@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700;800&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 40px;
+            color: black;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 30px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 18px;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+            background-color: black;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger .line {
+            width: 30px;
+            height: 4px;
+            background-color: #06C167;
+            margin: 6px 0;
+        }
+        .nav-bar {
+            display: flex;
+        }
+        .main-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .form.signup {
+            width: 100%;
+        }
+        .form .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            display: block;
+        }
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-field input,
+        .input-field select {
+            width: calc(100% - 40px);
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 18px;
+        }
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #888;
+        }
+        .input-field.terms {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        .input-field.terms label {
+            display: inline;
+            margin-left: 10px;
+            font-weight: normal;
+            color: #333;
+        }
+        .input-field.terms input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .input-field.terms a {
+            color: #06C167;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .input-field.terms a:hover {
+            color: #00A04A;
+        }
+        .input-field.button {
+            text-align: center;
+        }
+        .input-field.button button {
+            background-color: #06C167;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .input-field.button button:hover {
+            background-color: #00A04A;
+        }
+        .social-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-buttons button {
+            background-color: #4285F4;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 10px;
+            width: calc(100% - 20px);
+            transition: background-color 0.3s;
+        }
+        .social-buttons button.facebook {
+            background-color: #3b5998;
+        }
+        .login-signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .login-signup .text {
+            font-size: 18px;
+        }
+        .login-signup .login-link {
+            color: #06C167;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .image-container {
+            flex: 1;
+            background: url('your-image-url.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 0 8px 8px 0;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 8px 8px 0;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        footer .footer-container > div {
+            flex: 1;
+            margin: 10px;
+        }
+        footer h3 {
+            color: #06C167;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        footer p, footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 18px;
+        }
+        footer a:hover {
+            color: #CCFFCC;
+        }
+        .footer-social a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s;
+            font-size: 24px;
+        }
+        .footer-social a:hover {
+            transform: translateY(-5px);
+        }
+        .footer-links {
+            text-align: right;
+            flex: 1;
+            color: white;
+            font-size: 18px;
+        }
+        .footer-links a {
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .footer-links a:hover {
+            color: #06C167;
+        }
+        @media (max-width: 768px) {
+            .nav-bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-bar.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .main-container {
+                flex-direction: column;
+            }
+            .image-container {
+                height: 300px;
+                border-radius: 0 0 8px 8px;
+            }
+            footer .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-links {
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <title>Signup</title>
+</head>
+<body style="background-color: #00A04A;">
+    <header>
+        <div class="logo">Food <b style="color: #06C167;">Share</b></div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login or Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.querySelector(".hamburger").onclick = function() {
+            document.querySelector(".nav-bar").classList.toggle("active");
+        }
+    </script>
+    <div class="main-container">
+        <div class="form-container">
+            <div class="form signup">
+                <span class="title">Registration</span>
+                <form action="" method="post">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" name="name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your email" name="email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-field">
+                        <select id="district" name="district" required>
+                            <option value="chennai">Chennai</option>
+                            <option value="kancheepuram">Kancheepuram</option>
+                            <option value="coimbatore">Coimbatore</option>
+                            <option value="madurai">Madurai</option>
+                            <option value="trichy">Trichy</option>
+                            <option value="salem">Salem</option>
+                            <option value="tirunelveli">Tirunelveli</option>
+                            <option value="vellore">Vellore</option>
+                            <option value="tiruvannamalai">Tiruvannamalai</option>
+                            <option value="thanjavur">Thanjavur</option>
+                            <option value="erode">Erode</option>
+                        </select>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="input-field password">
+                        <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+                        <i class="fas fa-lock"></i>
+                        <i class="fas fa-eye-slash showHidePw" onclick="togglePassword('signup-password')"></i>
+                    </div>
+                    <div class="input-field terms">
+                        <label>
+                            <input type="checkbox" id="terms-checkbox" onchange="handleCheckbox()" required>I accept the <a href="terms.html" target="_blank">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <div class="input-field button">
+                        <button type="submit" id="signup-button" name="signup" disabled>Signup</button>
+                    </div>
+                </form>
+                <div class="social-buttons">
+                    <button class="google" onclick="continueWithGoogle()">Continue with Google</button>
+                    <button class="facebook" onclick="continueWithFacebook()">Continue with Facebook</button>
+                </div>
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="login.html" class="login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="image-container">
+            <!-- Replace this with your image -->
+            <img src="C:\Users\HP\Documents\FOOD LINKERS\a.jpeg" alt="Image">
+        </div>
+    </div>
+    <footer style="background-color: rgb(65, 57, 57);">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>The basic concept of this project Food Waste Management is to collect the excess/leftover food from donors such as hotels, restaurants, marriage halls, etc. and distribute to the needy people.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> +123-456-7890</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:Foodshare99@gmail.com">Foodshare99@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/food.share99" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/food.share.2024?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/@foodshare-eg8se?si=jZKg1yjiy3_JmNo3" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://chat.whatsapp.com/E2XfwaQxFQeFlL84SuwdcQ" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="logo" style="color: white; font-size: 30px;">Food <b style="color: #06C167;">Share</b></p>
+                <a href="home.html" style="font-size: 18px;">Home</a> | 
+                <a href="about.html" style="font-size: 18px;">About</a> | 
+                <a href="help.html" style="font-size: 18px;">Help</a> | 
+                <a href="contact.html" style="font-size: 18px;">Contact</a>
+                <p style="color: #06C167; font-size: 18px;">FoodShare © 2024</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function togglePassword(id) {
+            const passwordField = document.getElementById(id);
+            const showHidePwIcon = passwordField.nextElementSibling;
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                showHidePwIcon.classList.remove("fa-eye-slash");
+                showHidePwIcon.classList.add("fa-eye");
+            } else {
+                passwordField.type = "password";
+                showHidePwIcon.classList.remove("fa-eye");
+                showHidePwIcon.classList.add("fa-eye-slash");
+            }
+        }
+
+        function handleCheckbox() {
+            const termsCheckbox = document.getElementById("terms-checkbox");
+            const signupButton = document.getElementById("signup-button");
+            signupButton.disabled = !termsCheckbox.checked;
+        }
+
+        function continueWithGoogle() {
+            // Implement Google OAuth login logic here
+            alert("Google login not implemented yet.");
+        }
+
+        function continueWithFacebook() {
+            // Implement Facebook OAuth login logic here
+            alert("Facebook login not implemented yet.");
+        }
+    </script>
+</body>
+</html>
+
